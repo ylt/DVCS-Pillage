@@ -82,13 +82,13 @@ getsha `cat .git/$ref`
 
 #5 - get index
 get "index"
-get ".gitignore"
+#get ".gitignore"
 
-if [ "$2" != "" ]; then
-   echo "Getting single file: $2"
-   sha=`git ls-files --stage|grep $2|head -1|awk '{print $2}'`
+if [ "$3" != "" ]; then
+   echo "Getting single file: $3"
+   sha=`git ls-files --stage|grep $3|head -1|awk '{print $2}'`
    getsha $sha
-   git checkout $2
+   git checkout $3
    exit 0
 fi
 
